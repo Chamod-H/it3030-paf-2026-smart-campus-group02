@@ -1,0 +1,206 @@
+/* p_login.css */
+
+.p_login_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7f6; /* Light, elegant background */
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.p_login_container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft elevated shadow */
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.p_login_header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.p_login_title {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  color: #1a1f36;
+  font-weight: 700;
+}
+
+.p_login_subtitle {
+  margin: 0;
+  font-size: 15px;
+  color: #697386;
+}
+
+.p_login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.p_login_input_group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.p_login_label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c4257;
+}
+
+.p_login_input {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #e0e6eb;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  color: #1a1f36;
+  background-color: #fcfcfd;
+}
+
+.p_login_input::placeholder {
+  color: #a3acb9;
+}
+
+.p_login_input:focus {
+  border-color: #3b82f6; /* Modern primary blue */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: #ffffff;
+}
+
+.p_login_options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.p_login_checkbox_container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #4f566b;
+}
+
+.p_login_checkbox {
+  margin-right: 8px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: #3b82f6;
+}
+
+.p_login_forgot_link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.p_login_forgot_link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.p_login_btn_primary {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.p_login_btn_primary:hover {
+  background-color: #2563eb;
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.p_login_btn_primary:active {
+  transform: translateY(0);
+}
+
+.p_login_divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+  color: #8792a2;
+}
+
+.p_login_divider::before,
+.p_login_divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e0e6eb;
+}
+
+.p_login_divider_text {
+  padding: 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.p_login_btn_google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #3c4257;
+  border: 1px solid #d2d6dc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.p_login_btn_google:hover {
+  background-color: #f8fafc;
+  border-color: #c4c8d0;
+}
+
+.p_login_google_icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.p_login_register_text {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: #4f566b;
+}
+
+.p_login_register_link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.p_login_register_link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}

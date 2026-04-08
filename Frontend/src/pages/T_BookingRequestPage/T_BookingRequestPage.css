@@ -1,0 +1,215 @@
+/* BookingRequestPage.css */
+
+.T_pageContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc; /* Light modern background */
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.T_formCard {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 600px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.T_cardHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.T_pageTitle {
+  margin: 0 0 0.5rem 0;
+  color: #0f172a;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.T_pageSubtitle {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.T_bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.T_formRow {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.T_formRow > * {
+  flex: 1;
+}
+
+.T_inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.T_label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.T_input,
+.T_select,
+.T_textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  font-size: 0.95rem;
+  color: #1e293b;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Styling specifically for empty select to look like placeholder */
+.T_select:invalid {
+  color: #94a3b8;
+}
+
+.T_input:focus,
+.T_select:focus,
+.T_textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: #ffffff;
+}
+
+.T_textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.T_inputError {
+  border-color: #ef4444;
+}
+
+.T_inputError:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.T_errorText {
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.T_buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.T_btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.T_btnPrimary {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.T_btnPrimary:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.15);
+}
+
+.T_btnPrimary:active {
+  transform: translateY(0);
+}
+
+.T_btnOutline {
+  background-color: transparent;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+
+.T_btnOutline:hover {
+  background-color: #f8fafc;
+  color: #334155;
+  border-color: #94a3b8;
+}
+
+.T_btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.T_availabilityStatus {
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: T_fadeIn 0.3s ease-in-out;
+}
+
+.T_status_checking {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.T_status_available {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.T_status_unavailable {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+@keyframes T_fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .T_formRow {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .T_formCard {
+    padding: 1.5rem;
+  }
+}

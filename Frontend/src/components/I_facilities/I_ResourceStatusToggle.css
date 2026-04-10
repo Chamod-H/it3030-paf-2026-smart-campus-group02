@@ -1,0 +1,184 @@
+.rst-container {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.rst-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rst-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rst-track {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #d1d5db;
+  position: relative;
+  transition: background-color 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rst-active .rst-track {
+  background-color: #10b981;
+}
+
+.rst-inactive .rst-track {
+  background-color: #ef4444;
+}
+
+.rst-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rst-active .rst-thumb {
+  transform: translateX(20px);
+}
+
+.rst-icon {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.rst-active .rst-icon {
+  color: #10b981;
+}
+
+.rst-inactive .rst-icon {
+  color: #ef4444;
+}
+
+.rst-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #6b7280;
+  border-radius: 50%;
+  animation: rst-spin 0.8s linear infinite;
+}
+
+@keyframes rst-spin {
+  to { transform: rotate(360deg); }
+}
+
+.rst-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.rst-active .rst-label {
+  color: #059669;
+}
+
+.rst-inactive .rst-label {
+  color: #dc2626;
+}
+
+/* Modal Overlay */
+.rst-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rst-confirm-modal {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  animation: rst-fade-in 0.2s ease-out;
+}
+
+@keyframes rst-fade-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.rst-confirm-modal h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.rst-confirm-modal p {
+  margin: 0 0 16px 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.rst-warning {
+  background-color: #fffbeb;
+  color: #b45309 !important;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border-left: 4px solid #f59e0b;
+  font-size: 0.875rem !important;
+}
+
+.rst-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.rst-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.rst-btn-cancel {
+  background-color: white;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.rst-btn-cancel:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.rst-btn-confirm {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.rst-btn-confirm:hover {
+  background-color: #2563eb;
+}

@@ -1,0 +1,202 @@
+.p-user-menu {
+  position: relative;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Trigger Button ── */
+.p-um-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 6px;
+  background: none;
+  border: 1.5px solid transparent;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.p-um-trigger:hover,
+.p-um-trigger-open {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+/* ── Avatar ── */
+.p-um-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.p-um-avatar-lg {
+  width: 44px;
+  height: 44px;
+}
+
+.p-um-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.p-um-initials {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.p-um-avatar-lg .p-um-initials { font-size: 1rem; }
+
+.p-um-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #374151;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p-um-chevron {
+  font-size: 0.75rem;
+  color: #6b7280;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+.p-um-chevron-up { transform: rotate(180deg); }
+
+/* ── Dropdown Panel ── */
+.p-um-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 240px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  overflow: hidden;
+  animation: dropdownIn 0.15s ease-out;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Identity Block ── */
+.p-um-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.p-um-identity-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.p-um-full-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-um-email {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-um-role-badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.p-um-role-admin   { background-color: #fee2e2; color: #b91c1c; }
+.p-um-role-tech    { background-color: #fef3c7; color: #92400e; }
+.p-um-role-student { background-color: #eff6ff; color: #1d4ed8; }
+
+/* ── Divider ── */
+.p-um-divider {
+  height: 1px;
+  background-color: #f3f4f6;
+  margin: 0;
+}
+
+/* ── Menu Items ── */
+.p-um-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+
+.p-um-menu-list li button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s;
+}
+
+.p-um-menu-list li button:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* ── Logout ── */
+.p-um-logout-wrapper { padding: 6px 8px 8px; }
+
+.p-um-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 10px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #dc2626;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.p-um-logout-btn:hover { background-color: #fef2f2; }

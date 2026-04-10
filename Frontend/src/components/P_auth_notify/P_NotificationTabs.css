@@ -1,0 +1,71 @@
+.p-notification-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 4px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for clean look */
+  -ms-overflow-style: none;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.p-notification-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.p-nt-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.p-nt-tab:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #111827;
+}
+
+.p-nt-tab.active {
+  background-color: white;
+  color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.p-nt-tab-icon {
+  font-size: 1.1rem;
+}
+
+.p-nt-tab-count {
+  background-color: #3b82f6;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-left: 2px;
+}
+
+.p-nt-tab.active .p-nt-tab-count {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+@media (max-width: 640px) {
+  .p-notification-tabs { gap: 4px; }
+  .p-nt-tab { padding: 8px 12px; font-size: 0.8rem; }
+  .p-nt-tab-label { display: none; } /* On mobile, show only icons + counts */
+  .p-nt-tab.active .p-nt-tab-label { display: inline; } /* Expand active tab on mobile */
+}

@@ -1,0 +1,193 @@
+.t-booking-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.t-booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 900px; /* Ensures horizontal scroll when compressed rather than wrapping text badly */
+}
+
+.t-booking-table thead {
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.t-booking-table th {
+  padding: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.t-bt-actions-header {
+  text-align: right;
+  padding-right: 24px !important;
+}
+
+.t-booking-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.t-booking-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.t-booking-table td {
+  padding: 16px;
+  font-size: 0.95rem;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.t-bt-id {
+  font-family: monospace;
+  color: #6b7280;
+  font-size: 0.85rem !important;
+}
+
+.t-bt-primary {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Tabular Badges */
+.t-bt-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.t-bt-badge-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.t-bt-badge-approved {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.t-bt-badge-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.t-bt-badge-cancelled {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.t-bt-badge-completed {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+.t-bt-badge-default {
+  background-color: #f9fafb;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+/* Actions Row Styling */
+.t-bt-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  align-items: center;
+}
+
+.t-bt-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t-bt-btn-view {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.t-bt-btn-view:hover {
+  background-color: #dbeafe;
+}
+
+.t-bt-btn-approve {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 6px 10px;
+}
+
+.t-bt-btn-approve:hover {
+  background-color: #d1fae5;
+}
+
+.t-bt-btn-reject {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 6px 10px;
+}
+
+.t-bt-btn-reject:hover {
+  background-color: #fee2e2;
+}
+
+.t-bt-btn-cancel {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.t-bt-btn-cancel:hover {
+  background-color: #fee2e2;
+}
+
+/* Empty Table State */
+.t-booking-table-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px dashed #d1d5db;
+  color: #6b7280;
+  font-family: 'Inter', system-ui, sans-serif;
+  text-align: center;
+}
+
+.t-bt-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}

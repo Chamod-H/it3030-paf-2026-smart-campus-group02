@@ -1,0 +1,85 @@
+.resource-search-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 24px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.rs-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.rs-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rs-icon {
+  position: absolute;
+  left: 16px;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.rs-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 1px solid #d1d5db;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  color: #111827;
+  background-color: white;
+  transition: all 0.2s ease;
+  outline: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.rs-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.rs-input::placeholder {
+  color: #9ca3af;
+}
+
+.rs-button {
+  padding: 12px 24px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+  white-space: nowrap;
+}
+
+.rs-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.rs-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive setup */
+@media (max-width: 480px) {
+  .rs-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rs-button {
+    width: 100%;
+  }
+}

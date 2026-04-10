@@ -1,0 +1,131 @@
+.t-approve-bookings-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111827;
+}
+
+.t-apb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 20px;
+}
+
+.t-apb-title-area h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+
+.t-apb-title-area p {
+  color: #4b5563;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.t-apb-badge {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.t-apb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+.t-apb-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.t-apb-warning-banner {
+  background-color: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-bottom: none;
+  color: #92400e;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  line-height: 1.4;
+}
+
+/* Dynamically stripping the top border from the generic booking card if the warning banner triggers directly above it globally */
+.t-apb-warning-banner + .t-booking-card {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+}
+
+.t-apb-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f9fafb;
+  border-radius: 16px;
+  border: 2px dashed #e5e7eb;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.t-apb-empty-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.t-apb-empty h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 12px 0;
+}
+
+.t-apb-empty p {
+  color: #6b7280;
+  font-size: 1.05rem;
+  margin: 0 0 24px 0;
+}
+
+.t-apb-btn-return {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
+
+.t-apb-btn-return:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .t-apb-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

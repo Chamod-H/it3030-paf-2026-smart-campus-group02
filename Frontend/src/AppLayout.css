@@ -1,0 +1,27 @@
+/* ── App Layout Structural Rules ── */
+.app-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.app-main-container {
+  display: flex;
+  flex: 1;
+}
+
+.app-content-area {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure empty pages push the footer (if any) to the bottom */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+}

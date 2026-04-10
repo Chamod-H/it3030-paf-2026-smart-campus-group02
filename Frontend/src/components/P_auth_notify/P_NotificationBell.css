@@ -1,0 +1,82 @@
+.p-notification-bell {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #4b5563;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+  outline: none;
+}
+
+.p-notification-bell:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.p-notification-bell:focus-visible {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.p-nb-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Badge ── */
+.p-nb-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid white; /* Contrast gap */
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+/* ── Wiggle Animation ── */
+.p-nb-animating svg {
+  animation: p-nb-wiggle 0.5s ease-in-out;
+}
+
+@keyframes p-nb-wiggle {
+  0% { transform: rotate(0); }
+  15% { transform: rotate(15deg); }
+  30% { transform: rotate(-15deg); }
+  45% { transform: rotate(10deg); }
+  60% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0); }
+}
+
+/* ── Pulse for "hasNew" ── */
+.p-nb-animating::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #ef4444;
+  animation: p-nb-pulse 0.8s ease-out;
+  pointer-events: none;
+}
+
+@keyframes p-nb-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}

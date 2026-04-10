@@ -1,0 +1,109 @@
+.shared-pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.shared-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 9999px; /* Pill layout */
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Primary Action Buttons ── */
+.shared-pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.shared-pagination-btn:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.shared-pagination-btn:disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.pagination-chevron {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ── Numbered Window Mapping ── */
+.shared-pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shared-page-number {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shared-page-number:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.shared-page-number.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* ── Mobile Layout Context ── */
+.mobile-only {
+  display: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  padding: 0 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: block;
+  }
+  
+  .shared-pagination-controls {
+    border-radius: 12px; /* Swap from pill to rounded box on tight screens */
+  }
+}

@@ -1,0 +1,128 @@
+.shared-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto; /* Pushes footer to the bottom of flexible containers */
+  padding-top: 40px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #475569;
+}
+
+.shared-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* ── Brand Section ── */
+.brand-section {
+  padding-right: 40px;
+}
+
+.shared-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.logo-icon {
+  background: #0f172a;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.shared-footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Links & Support ── */
+.footer-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #64748b;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.footer-links li a:hover {
+  color: #2563eb;
+}
+
+.footer-contact-info {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.footer-contact-info p {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* ── Bottom Bar ── */
+.shared-footer-bottom {
+  background-color: #f8fafc;
+  padding: 16px 40px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+.shared-footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .shared-footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px 32px;
+  }
+  
+  .brand-section {
+    padding-right: 0;
+  }
+}

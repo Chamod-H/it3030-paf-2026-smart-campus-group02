@@ -1,0 +1,199 @@
+.t-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.t-approval-modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: t-am-zoom 0.2s ease-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes t-am-zoom {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.t-am-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px 16px;
+  text-align: center;
+}
+
+.t-am-icon-container {
+  width: 56px;
+  height: 56px;
+  background-color: #d1fae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.1);
+}
+
+.t-am-icon {
+  font-size: 1.8rem;
+}
+
+.t-am-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.t-am-body {
+  padding: 0 24px 24px;
+}
+
+.t-am-warning-text {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.t-am-summary-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.t-am-summary-row {
+  display: flex;
+  font-size: 0.9rem;
+}
+
+.t-am-label {
+  color: #6b7280;
+  width: 80px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.t-am-value {
+  color: #111827;
+  font-weight: 600;
+}
+
+.t-am-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.t-am-form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.t-am-form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  color: #111827;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.t-am-form-group textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  background-color: white;
+}
+
+.t-am-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.t-am-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.t-am-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.t-am-btn-cancel {
+  background-color: white;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.t-am-btn-cancel:not(:disabled):hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.t-am-btn-confirm {
+  background-color: #10b981;
+  color: white;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.t-am-btn-confirm:not(:disabled):hover {
+  background-color: #059669;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 480px) {
+  .t-am-footer {
+    flex-direction: column;
+  }
+  
+  .t-am-btn {
+    width: 100%;
+  }
+  
+  .t-am-btn-cancel {
+    order: 2;
+  }
+  
+  .t-am-btn-confirm {
+    order: 1;
+  }
+}

@@ -1,0 +1,173 @@
+.t-booking-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #111827;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.t-booking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+}
+
+.t-bc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.t-bc-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.t-bc-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Status variants */
+.t-badge-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.t-badge-approved {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.t-badge-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.t-badge-cancelled {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.t-badge-completed {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+.t-badge-default {
+  background-color: #f9fafb;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.t-bc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.t-bc-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.t-bc-label {
+  color: #6b7280;
+  font-weight: 500;
+  min-width: 85px;
+  flex-shrink: 0;
+}
+
+.t-bc-value {
+  color: #374151;
+  font-weight: 600;
+}
+
+.t-bc-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.t-bc-admin-info {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.t-bc-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  margin-top: auto;
+}
+
+.t-bc-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  text-align: center;
+}
+
+.t-bc-btn-view {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.t-bc-btn-view:hover {
+  background-color: #dbeafe;
+}
+
+.t-bc-btn-cancel, .t-bc-btn-reject {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.t-bc-btn-cancel:hover, .t-bc-btn-reject:hover {
+  background-color: #fee2e2;
+}
+
+.t-bc-btn-success {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.t-bc-btn-success:hover {
+  background-color: #d1fae5;
+}

@@ -1,0 +1,128 @@
+.t-booking-filters-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111827;
+}
+
+.t-bf-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.t-bf-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.t-bf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.t-bf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.t-bf-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.t-bf-input,
+.t-bf-select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #111827;
+  background-color: #f9fafb;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.t-bf-input:focus,
+.t-bf-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: white;
+}
+
+.t-bf-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.t-bf-btn-apply,
+.t-bf-btn-reset {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+
+.t-bf-btn-apply {
+  background-color: #3b82f6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.t-bf-btn-apply:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.t-bf-btn-reset {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.t-bf-btn-reset:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+/* For wider screens if this goes into a top horizontal bar instead of a vertical sidebar layout */
+@media (min-width: 768px) {
+  .t-booking-filters-container.t-horizontal-mode .t-bf-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  
+  .t-booking-filters-container.t-horizontal-mode .t-bf-group {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .t-booking-filters-container.t-horizontal-mode .t-bf-actions {
+    flex-direction: row;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    flex: 1;
+    min-width: 200px;
+  }
+}

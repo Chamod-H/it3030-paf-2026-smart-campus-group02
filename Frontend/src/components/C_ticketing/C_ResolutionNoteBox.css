@@ -1,0 +1,118 @@
+.c-rnb-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Editable - warm amber to signal action needed */
+.c-rnb-editable {
+  background-color: #fffbeb;
+  border: 1px solid #fcd34d;
+}
+
+/* Resolved - cool green to signal completion */
+.c-rnb-resolved {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.c-rnb-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.c-rnb-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.c-rnb-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.c-rnb-title-block h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.c-rnb-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Read-only note display */
+.c-rnb-note-display {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.c-rnb-note-display p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.c-rnb-empty {
+  color: #9ca3af !important;
+  font-style: italic;
+}
+
+/* Editable textarea */
+.c-rnb-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #111827;
+  background-color: white;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.c-rnb-textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.c-rnb-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.c-rnb-save-btn {
+  padding: 10px 22px;
+  background-color: #10b981;
+  border: none;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.c-rnb-save-btn:hover:not(:disabled) { background-color: #059669; }
+
+.c-rnb-save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,131 @@
+.c-ticket-attachment-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.c-tau-dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  background-color: #f9fafb;
+  transition: all 0.2s;
+}
+
+.c-tau-dropzone.drag-active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.c-tau-dropzone.c-tau-error-border {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.c-tau-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.c-tau-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.c-tau-content p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.c-tau-trigger {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.c-tau-limit {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.c-tau-error-text {
+  font-size: 0.85rem;
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Image Previews explicitly mapping structures correctly via precise isolated boundary CSS layouts perfectly */
+.c-tau-preview-grid {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.c-tau-preview-card {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-tau-preview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c-tau-remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(220, 38, 38, 0.9);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.c-tau-remove-btn:hover {
+  background-color: #b91c1c;
+}
+
+.c-tau-preview-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(17, 24, 39, 0.7);
+  color: white;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 4px 0;
+}

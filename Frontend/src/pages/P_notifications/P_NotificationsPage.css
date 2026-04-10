@@ -1,0 +1,192 @@
+.p-notifications-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 40px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.p-notif-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.p-notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.p-notif-title-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.p-notif-title-area h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.p-notif-count-pill {
+  padding: 4px 12px;
+  background-color: #dbeafe;
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 99px;
+}
+
+.p-notif-btn-text {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3b82f6;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.p-notif-btn-text:hover:not(:disabled) {
+  background-color: #eff6ff;
+}
+
+.p-notif-btn-text:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ── Navbar & Filters ── */
+.p-notif-navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.p-notif-status-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.p-notif-filter-chip {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748b;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.p-notif-filter-chip:hover {
+  background-color: #f1f5f9;
+}
+
+.p-notif-filter-chip.active {
+  background-color: #1e293b;
+  color: white;
+  border-color: #1e293b;
+}
+
+/* ── List Area ── */
+.p-notif-list-container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.p-notif-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Customize NotificationItem for the grid */
+.p-notif-grid > div {
+  border-bottom: 1px solid #f1f5f9;
+  border-radius: 0 !important;
+}
+
+.p-notif-grid > div:last-child {
+  border-bottom: none;
+}
+
+/* ── Loader ── */
+.p-notif-loader-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #64748b;
+}
+
+.p-notif-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f1f5f9;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: notifSpin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes notifSpin { to { transform: rotate(360deg); } }
+
+/* ── Empty State ── */
+.p-notif-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  height: 400px;
+}
+
+.p-notif-empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.p-notif-empty h3 {
+  margin: 0 0 8px;
+  color: #1e293b;
+}
+
+.p-notif-empty p {
+  color: #64748b;
+  max-width: 300px;
+  margin: 0 0 24px;
+}
+
+.p-notif-reset-btn {
+  padding: 8px 20px;
+  background-color: white;
+  border: 1.5px solid #3b82f6;
+  color: #3b82f6;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.p-notif-reset-btn:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .p-notif-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .p-notif-global-actions { width: 100%; display: flex; justify-content: flex-end; }
+}

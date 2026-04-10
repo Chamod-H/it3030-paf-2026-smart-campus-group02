@@ -22,6 +22,7 @@ import Shared_ProfilePage from './pages/sharedPages/Shared_ProfilePage'
 import Shared_SettingsPage from './pages/sharedPages/Shared_SettingsPage'
 import Shared_HelpPage from './pages/sharedPages/Shared_HelpPage'
 import Shared_NotFoundPage from './pages/sharedPages/Shared_NotFoundPage'
+import Shared_EditProfilePage from './pages/sharedPages/Shared_EditProfilePage'
 
 // Module A Imports
 import I_AllResourcesPage from './pages/I_FacilitiesCatalogue/I_AllResourcesPage'
@@ -72,6 +73,14 @@ const App = () => {
                   element={
                     <P_UserRouteGuard>
                       <Shared_ProfilePage />
+                    </P_UserRouteGuard>
+                  }
+                />
+                <Route
+                  path='/profile/edit'
+                  element={
+                    <P_UserRouteGuard>
+                      <Shared_EditProfilePage />
                     </P_UserRouteGuard>
                   }
                 />

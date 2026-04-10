@@ -1,0 +1,64 @@
+.p-google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: white;
+  border: 1.5px solid #dadce0;
+  border-radius: 8px;
+  font-family: 'Inter', 'Google Sans', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3c4043;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  user-select: none;
+}
+
+.p-google-login-btn:hover:not(.p-glb-disabled) {
+  background-color: #f8f9fa;
+  border-color: #bdc1c6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.p-google-login-btn:active:not(.p-glb-disabled) {
+  background-color: #f1f3f4;
+  box-shadow: none;
+}
+
+.p-glb-disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.p-glb-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Spinner replaces the G-icon during loading */
+.p-glb-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid #dadce0;
+  border-top-color: #4285f4;
+  border-radius: 50%;
+  animation: glb-spin 0.7s linear infinite;
+}
+
+@keyframes glb-spin {
+  to { transform: rotate(360deg); }
+}
+
+.p-glb-text {
+  line-height: 1;
+}

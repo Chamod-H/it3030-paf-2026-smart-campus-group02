@@ -1,0 +1,145 @@
+.shared-filter-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  font-family: 'Inter', system-ui, sans-serif;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+/* ── Header ── */
+.shared-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.shared-filter-header:hover {
+  background-color: #f1f5f9;
+}
+
+.shared-filter-header:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+.shared-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shared-filter-icon {
+  font-size: 1.1rem;
+}
+
+.shared-filter-title h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shared-filter-chevron {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  transition: transform 0.3s ease;
+}
+
+.shared-filter-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ── Content ── */
+.shared-filter-content {
+  border-top: 1px solid #e2e8f0;
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.shared-filter-body {
+  padding: 24px 20px;
+  /* Display is managed by the children, but we add a general gap baseline */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Form inputs inside filter panel standard reset */
+.shared-filter-body input,
+.shared-filter-body select {
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #334155;
+  transition: border-color 0.2s;
+}
+
+.shared-filter-body input:focus,
+.shared-filter-body select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* ── Actions ── */
+.shared-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.shared-filter-reset-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #64748b;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shared-filter-reset-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.shared-filter-apply-btn {
+  padding: 8px 24px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.shared-filter-apply-btn:hover {
+  background-color: #334155;
+}
+
+@media (max-width: 640px) {
+  .shared-filter-body {
+    flex-direction: column;
+  }
+}

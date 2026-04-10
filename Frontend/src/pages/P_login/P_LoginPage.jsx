@@ -19,9 +19,15 @@ const P_LoginPage = () => {
 
   const [isRedirecting, setIsRedirecting] = useState(false);
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleLogin = (credentialResponse) => {
     setIsRedirecting(true);
-    loginWithGoogle();
+    try {
+      loginWithGoogle(credentialResponse);
+      navigate('/dashboard');
+    } catch (err) {
+      setLocalError('Google authentication failed. Please try again.');
+      setIsRedirecting(false);
+    }
   };
 
   const handleStandardLogin = async (e) => {

@@ -42,7 +42,7 @@ const Shared_ProfilePage = () => {
         actions={
           <button 
             className="profile-edit-btn" 
-            onClick={() => navigate('/profile/setup')}
+            onClick={() => navigate('/profile/edit')}
           >
             ✏️ Edit Details
           </button>
@@ -54,13 +54,13 @@ const Shared_ProfilePage = () => {
         <div className="profile-identity-card">
           <div className="profile-avatar-large">
             {user.avatarUrl ? (
-              <img src={user.avatarUrl} alt={user.name} />
+              <img src={user.avatarUrl} alt={user.username || user.name} />
             ) : (
-              <span className="profile-initials">{getInitials(user.name)}</span>
+              <span className="profile-initials">{getInitials(user.username || user.name)}</span>
             )}
           </div>
           
-          <h2 className="profile-name">{user.name}</h2>
+          <h2 className="profile-name">{user.username || user.name}</h2>
           <p className="profile-email">{user.email}</p>
           
           <div className="profile-role-wrapper">
@@ -82,7 +82,7 @@ const Shared_ProfilePage = () => {
             
             <div className="info-group">
               <span className="info-label">Full Name</span>
-              <span className="info-value">{user.name || 'Not provided'}</span>
+              <span className="info-value">{user.username || user.name || 'Not provided'}</span>
             </div>
 
             <div className="info-group">

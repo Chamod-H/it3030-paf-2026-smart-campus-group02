@@ -43,10 +43,29 @@ const C_CreateTicketPage = () => {
     if (!formData.resourceId) newErrors.resourceId = 'Please select a resource or location.';
     if (!formData.category) newErrors.category = 'Please select an issue category.';
     if (!formData.priority) newErrors.priority = 'Please select a priority level.';
-    if (!formData.contactDetails?.trim()) newErrors.contactDetails = 'Contact details are required.';
+    if (!formData.contactDetails?.trim()) {
+      newErrors.contactDetails = 'Mobile number cannot be empty.';
+    } else if (!/^\d{10}$/.test(formData.contactDetails.trim())) {
+      newErrors.contactDetails = 'Mobile number must be exactly 10 digits.';
+    }
     if (!formData.description?.trim()) newErrors.description = 'A description of the issue is required.';
     else if (formData.description.trim().length < 20) newErrors.description = 'Please provide more detail (at least 20 characters).';
     return newErrors;
+  };
+
+  const handleFieldChange = (updatedFormData, fieldName) => {
+    setFormData(updatedFormData);
+    // Real-time validation for contactDetails
+    if (fieldName === 'contactDetails') {
+      const val = updatedFormData.contactDetails || '';
+      if (!val.trim()) {
+        setErrors(prev => ({ ...prev, contactDetails: 'Mobile number cannot be empty.' }));
+      } else if (!/^\d{10}$/.test(val.trim())) {
+        setErrors(prev => ({ ...prev, contactDetails: 'Mobile number must be exactly 10 digits.' }));
+      } else {
+        setErrors(prev => { const next = { ...prev }; delete next.contactDetails; return next; });
+      }
+    }
   };
 
   const handleSubmit = async () => {
@@ -161,7 +180,7 @@ const C_CreateTicketPage = () => {
         )}
         <C_TicketForm
           formData={formData}
-          setFormData={setFormData}
+          setFormData={(updatedData, fieldName) => handleFieldChange(updatedData, fieldName)}
           errors={errors}
           resources={resources}
           onSubmit={handleSubmit}

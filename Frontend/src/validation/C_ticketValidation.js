@@ -110,9 +110,11 @@ export const validateTicketForm = (formData) => {
   const priorityError = validatePriority(formData.priority);
   if (priorityError) errors.priority = priorityError;
 
-  // Contact Details
+  // Contact Details — must be a 10-digit mobile number
   if (!formData.contactDetails || !formData.contactDetails.trim()) {
-    errors.contactDetails = 'Preferred contact details are required.';
+    errors.contactDetails = 'Mobile number cannot be empty.';
+  } else if (!/^\d{10}$/.test(formData.contactDetails.trim())) {
+    errors.contactDetails = 'Mobile number must be exactly 10 digits.';
   }
 
   // Attachments (optional but constrained)

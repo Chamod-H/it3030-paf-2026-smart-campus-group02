@@ -44,6 +44,7 @@ api.interceptors.response.use(
       console.warn("Session expired or unauthorized. Redirecting to login.");
       localStorage.removeItem('smart_campus_token');
       localStorage.removeItem('smart_campus_user');
+      localStorage.removeItem('is_google_auth');
       
       // Perform hard reload router trap to purge Context state cleanly
       window.location.href = '/login?expired=true';

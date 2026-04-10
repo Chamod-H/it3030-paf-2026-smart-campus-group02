@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
 
@@ -53,13 +54,39 @@ export const AuthProvider = ({ children }) => {
   }, []); // empty deps = mount only
 
   /**
-   * Redirects to the Google OAuth endpoint.
+   * Complete Google Login by sending the OAuth credential to the Spring Boot Backend.
+   * The backend verifies the token and strictly syncs it to MongoDB.
    */
-  const loginWithGoogle = () => {
+  const loginWithGoogle = async (credentialResponse) => {
     setLoading(true);
-    // Logic: window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`;
-    console.log('Redirecting to Google OAuth...');
-    // Real implementation will handle the redirect
+    setError(null);
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ credential: credentialResponse.credential }),
+      });
+
+      if (!res.ok) {
+        const msg = await res.text();
+        throw new Error(msg || 'Google Authentication rejected by backend.');
+      }
+
+      const data = await res.json();
+      const { token: jwtToken, user: userData } = data;
+
+      localStorage.setItem('smart_campus_token', jwtToken);
+      localStorage.setItem('smart_campus_user', JSON.stringify(userData));
+      
+      setToken(jwtToken);
+      setUser(userData);
+    } catch (err) {
+      console.error('Google login processing failed', err);
+      setError(err.message || 'Google Sign-In failed.');
+      throw err; 
+    } finally {
+      setLoading(false);
+    }
   };
 
   /**

@@ -37,4 +37,14 @@ public class AuthController {
             return ResponseEntity.status(401).body("Invalid Email or Password Credentials Payload.");
         }
     }
+
+    @PostMapping("/google")
+    public ResponseEntity<?> googleLogin(@RequestBody com.smart_campus_system.knd02.dto.GoogleLoginRequest request) {
+        try {
+            AuthResponse response = authService.googleLogin(request);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body(e.getMessage());
+        }
+    }
 }

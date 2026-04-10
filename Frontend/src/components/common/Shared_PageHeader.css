@@ -1,0 +1,99 @@
+.shared-page-header {
+  margin-bottom: 32px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Breadcrumbs ── */
+.shared-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-link {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #cbd5e1;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* ── Main Content Area ── */
+.shared-header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.shared-header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shared-page-title {
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.shared-page-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* ── Actions Area ── */
+.shared-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .shared-header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .shared-header-actions {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+  
+  .shared-page-title {
+    font-size: 1.5rem;
+  }
+}

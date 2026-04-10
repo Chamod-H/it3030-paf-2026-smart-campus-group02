@@ -1,0 +1,72 @@
+.rab-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.rab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+/* Available */
+.rab-available {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #d1fae5;
+}
+.rab-available .rab-dot {
+  background-color: #10b981;
+  box-shadow: 0 0 4px rgba(16, 185, 129, 0.4);
+}
+
+/* Limited */
+.rab-limited {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fef3c7;
+}
+.rab-limited .rab-dot {
+  background-color: #f59e0b;
+  box-shadow: 0 0 4px rgba(245, 158, 11, 0.4);
+}
+
+/* Unavailable */
+.rab-unavailable {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+}
+.rab-unavailable .rab-dot {
+  background-color: #ef4444;
+  box-shadow: 0 0 4px rgba(239, 68, 68, 0.4);
+}
+
+/* Out of Service */
+.rab-out-of-service {
+  background-color: #374151;
+  color: #f9fafb;
+  border: 1px solid #1f2937;
+}
+.rab-out-of-service .rab-dot {
+  background-color: #9ca3af;
+}
+
+/* Default / Fallback */
+.rab-default {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+.rab-default .rab-dot {
+  background-color: #9ca3af;
+}

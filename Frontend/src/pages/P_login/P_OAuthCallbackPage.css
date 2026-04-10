@@ -1,0 +1,68 @@
+.p-callback-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.p-callback-card {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  width: 90%;
+}
+
+.p-callback-card h2 {
+  margin: 20px 0 10px;
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+.p-callback-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── Loader ── */
+.p-callback-loader {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  display: inline-block;
+  animation: p-cb-spin 1s linear infinite;
+}
+
+@keyframes p-cb-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error State ── */
+.p-callback-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.p-retry-btn {
+  margin-top: 24px;
+  padding: 10px 24px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.p-retry-btn:hover {
+  background-color: #2563eb;
+}

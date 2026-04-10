@@ -1,0 +1,153 @@
+.all-resources-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #111827;
+}
+
+.arp-header {
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 24px;
+}
+
+.arp-header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: #111827;
+}
+
+.arp-header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.arp-main-content {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.arp-sidebar {
+  flex: 0 0 320px;
+  position: sticky;
+  top: 24px;
+}
+
+.arp-catalog-area {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Toolbar overlay styles and tweaks */
+.arp-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.arp-search-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Specific UI override for the search nested inside this page */
+.arp-search-wrapper .resource-search-container {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+.arp-sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.arp-sort-wrapper label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.arp-sort-select {
+  border: none;
+  font-size: 0.95rem;
+  color: #111827;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.arp-results-info {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.arp-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.arp-pagination button {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.arp-pagination button:hover:not(:disabled) {
+  background-color: #f3f4f6;
+}
+
+.arp-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arp-pagination span {
+  font-size: 0.95rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .arp-main-content {
+    flex-direction: column;
+  }
+  
+  .arp-sidebar {
+    flex: none;
+    width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .arp-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

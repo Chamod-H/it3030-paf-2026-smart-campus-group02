@@ -39,7 +39,8 @@ const P_UserMenu = ({
     return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
   };
 
-  const initials = getInitials(user.name);
+  const displayName = user.username || user.name;
+  const initials = getInitials(displayName);
 
   const handleItem = (callback, path) => {
     setOpen(false);
@@ -59,11 +60,11 @@ const P_UserMenu = ({
       >
         <span className="p-um-avatar">
           {user.avatarUrl
-            ? <img src={user.avatarUrl} alt={user.name} className="p-um-avatar-img" />
+            ? <img src={user.avatarUrl} alt={displayName} className="p-um-avatar-img" />
             : <span className="p-um-initials">{initials}</span>
           }
         </span>
-        <span className="p-um-name">{user.name}</span>
+        <span className="p-um-name">{displayName}</span>
         <span className={`p-um-chevron ${open ? 'p-um-chevron-up' : ''}`}>▾</span>
       </button>
 
@@ -74,12 +75,12 @@ const P_UserMenu = ({
           <div className="p-um-identity">
             <span className="p-um-avatar p-um-avatar-lg">
               {user.avatarUrl
-                ? <img src={user.avatarUrl} alt={user.name} className="p-um-avatar-img" />
+                ? <img src={user.avatarUrl} alt={displayName} className="p-um-avatar-img" />
                 : <span className="p-um-initials">{initials}</span>
               }
             </span>
             <div className="p-um-identity-text">
-              <span className="p-um-full-name">{user.name}</span>
+              <span className="p-um-full-name">{displayName}</span>
               <span className="p-um-email">{user.email}</span>
               <P_RoleBadge role={user.role} size="sm" />
             </div>

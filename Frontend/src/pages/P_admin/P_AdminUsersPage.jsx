@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Shared_PageHeader from '../../components/common/Shared_PageHeader';
 import { getAllUsers, createUser, updateUser, deleteUser } from '../../services/P_userService';
 import { validateAdminUserForm } from '../../validation/P_profileValidation';
+import { FiEdit2, FiTrash2 } from 'react-icons/fi';
 import './P_AdminUsersPage.css';
 
 const P_AdminUsersPage = () => {
@@ -191,8 +192,8 @@ const P_AdminUsersPage = () => {
                     <td>{user.department || '-'}</td>
                     <td>{user.phone || '-'}</td>
                     <td>
-                      <button className="btn-icon edit" onClick={() => handleOpenModal(user)} aria-label="Edit">✏️</button>
-                      <button className="btn-icon delete" onClick={() => handleDelete(user.id)} aria-label="Delete">🗑️</button>
+                      <button className="btn-icon edit" onClick={() => handleOpenModal(user)} aria-label="Edit"><FiEdit2 /></button>
+                      <button className="btn-icon delete" onClick={() => handleDelete(user.id)} aria-label="Delete"><FiTrash2 /></button>
                     </td>
                   </tr>
                 ))

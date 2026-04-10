@@ -36,8 +36,8 @@ const Shared_Footer = () => {
           <h4 className="footer-heading">Quick Links</h4>
           <ul className="footer-links">
             <li><Link to="/dashboard">Dashboard</Link></li>
-            <li><Link to="/facilities">Facilities</Link></li>
-            <li><Link to="/bookings/new">Book a Space</Link></li>
+            
+            
             <li><Link to="/tickets/new">Report an Issue</Link></li>
           </ul>
         </div>

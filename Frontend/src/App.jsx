@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import P_LoginPage from './pages/P_login/P_LoginPage'
 import P_OAuthCallbackPage from './pages/P_login/P_OAuthCallbackPage'
 import P_UnauthorizedPage from './pages/P_login/P_UnauthorizedPage'
+import P_ForgotPasswordPage from './pages/P_login/P_ForgotPasswordPage'
+import P_ResetPasswordPage from './pages/P_login/P_ResetPasswordPage'
 import P_ProfileSetupPage from './pages/P_register/P_ProfileSetupPage'
 import P_NotificationsPage from './pages/P_notifications/P_NotificationsPage'
 import P_AdminRoleManagementPage from './pages/P_admin/P_AdminRoleManagementPage'
@@ -100,6 +102,8 @@ const App = () => {
                 />
 
                 <Route path='/login' element={<P_LoginPage />} />
+                <Route path='/forgot-password' element={<P_ForgotPasswordPage />} />
+                <Route path='/reset-password' element={<P_ResetPasswordPage />} />
                 <Route path='/auth/callback' element={<P_OAuthCallbackPage />} />
                 <Route path='/unauthorized' element={<P_UnauthorizedPage />} />
                 <Route path='/profile/setup' element={<P_ProfileSetupPage />} />

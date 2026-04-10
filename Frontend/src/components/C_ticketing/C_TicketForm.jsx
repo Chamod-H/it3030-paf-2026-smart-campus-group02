@@ -14,9 +14,20 @@ const C_TicketForm = ({
   resources = [],
   mode = 'add'
 }) => {
+  const [fieldErrors, setFieldErrors] = useState({});
+
+  const validateContactDetails = (value) => {
+    if (!value || !value.trim()) return 'Mobile number cannot be empty.';
+    if (!/^\d{10}$/.test(value.trim())) return 'Mobile number must be exactly 10 digits.';
+    return '';
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }), name);
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === 'contactDetails') {
+      setFieldErrors(prev => ({ ...prev, contactDetails: validateContactDetails(value) }));
+    }
   };
 
   const handleAttachmentsChange = (filesUpdater) => {
@@ -92,15 +103,18 @@ const C_TicketForm = ({
           <div className="c-tf-field-group">
             <label htmlFor="contactDetails">Preferred Contact Details <span className="c-tf-required">*</span></label>
             <input
-              type="text"
+              type="tel"
               id="contactDetails"
               name="contactDetails"
               value={formData.contactDetails || ''}
               onChange={handleChange}
-              placeholder="Primary phone number or email"
-              className={errors.contactDetails ? 'c-tf-error-input' : ''}
+              placeholder="07XXXXXXXX (10 digits)"
+              className={('contactDetails' in fieldErrors ? fieldErrors.contactDetails : errors.contactDetails) ? 'c-tf-error-input' : ''}
             />
-            {errors.contactDetails && <span className="c-tf-error-text">{errors.contactDetails}</span>}
+            {(() => {
+              const contactErr = 'contactDetails' in fieldErrors ? fieldErrors.contactDetails : errors.contactDetails;
+              return contactErr ? <span className="c-tf-error-text">{contactErr}</span> : null;
+            })()}
           </div>
 
           {/* Description */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiEye, FiEdit2, FiPauseCircle, FiPlayCircle, FiTrash2 } from 'react-icons/fi';
 import './I_ResourceTable.css';
 
 const I_ResourceTable = ({ resources = [], onView, onEdit, onDelete, onToggleStatus }) => {
@@ -55,28 +56,28 @@ const I_ResourceTable = ({ resources = [], onView, onEdit, onDelete, onToggleSta
                     className="rt-btn rt-btn-view"
                     onClick={() => onView && onView(resource)}
                   >
-                    👁️
+                    <FiEye />
                   </button>
                   <button 
                     title="Edit Resource"
                     className="rt-btn rt-btn-edit"
                     onClick={() => onEdit && onEdit(resource)}
                   >
-                    ✏️
+                    <FiEdit2 />
                   </button>
                   <button 
                     title={resource.status === 'ACTIVE' ? 'Mark Out of Service' : 'Mark Active'}
                     className={`rt-btn rt-btn-toggle ${resource.status === 'ACTIVE' ? 'rt-toggle-off' : 'rt-toggle-on'}`}
                     onClick={() => onToggleStatus && onToggleStatus(resource)}
                   >
-                    {resource.status === 'ACTIVE' ? '⏸️' : '▶️'}
+                    {resource.status === 'ACTIVE' ? <FiPauseCircle /> : <FiPlayCircle />}
                   </button>
                   <button 
                     title="Delete Resource"
                     className="rt-btn rt-btn-delete"
                     onClick={() => onDelete && onDelete(resource)}
                   >
-                    🗑️
+                    <FiTrash2 />
                   </button>
                 </div>
               </td>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/P_AuthContext';
 import { useNotifications } from '../../contexts/P_NotificationContext';
 import Shared_PageHeader from '../../components/common/Shared_PageHeader';
-import { getMyTickets, getAllTickets } from '../../services/C_ticketService';
+import { getMyTickets, getAllTickets, getTechnicianTickets } from '../../services/C_ticketService';
 import P_roleService from '../../services/P_roleService';
 import T_bookingService from '../../services/T_bookingService';
 import I_resourceService from '../../services/I_resourceService';
@@ -24,6 +24,8 @@ const Shared_DashboardPage = () => {
   const { user } = useAuth();
   const { unreadCount } = useNotifications();
   const [ticketCount, setTicketCount] = useState('...');
+  const [myBookingCount, setMyBookingCount] = useState('...');
+  const [techQueueCount, setTechQueueCount] = useState('...');
   
   const [globalMetrics, setGlobalMetrics] = useState({
     users: '...',
@@ -41,6 +43,14 @@ const Shared_DashboardPage = () => {
       try {
         const myActiveTickets = await getMyTickets();
         setTicketCount(myActiveTickets.length);
+
+        const myActiveBookings = await T_bookingService.getMyBookings();
+        setMyBookingCount(myActiveBookings.length);
+
+        if (userRole === 'staff' || userRole === 'staff_member') {
+          const myQueue = await getTechnicianTickets();
+          setTechQueueCount(myQueue.length);
+        }
 
         if (userRole === 'admin') {
           const [usersRes, bookingsRes, facilitiesRes, ticketsRes] = await Promise.all([
@@ -66,11 +76,11 @@ const Shared_DashboardPage = () => {
 
   // Mock data representing module summaries combined with dynamic metrics
   const summaries = {
-    bookings: globalMetrics.pendingBookings,
+    bookings: userRole === 'admin' ? globalMetrics.pendingBookings : myBookingCount,
     tickets: userRole === 'admin' ? globalMetrics.globalTickets : ticketCount,
     facilities: globalMetrics.facilities,
     adminApprovals: globalMetrics.pendingBookings,
-    techQueue: 8,
+    techQueue: techQueueCount,
     users: globalMetrics.users
   };
 
@@ -93,7 +103,7 @@ const Shared_DashboardPage = () => {
   return (
     <div className="shared-dashboard-page">
       <Shared_PageHeader 
-        title={`Welcome back, ${firstName}! 👋`}
+        title={`Welcome back, ${firstName}!`}
         subtitle="Here's what's happening around the campus today."
       />
 

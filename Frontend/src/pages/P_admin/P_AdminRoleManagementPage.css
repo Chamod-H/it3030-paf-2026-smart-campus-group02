@@ -1,0 +1,260 @@
+.p-admin-roles-page {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  padding: 40px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.p-admin-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.p-admin-header {
+  margin-bottom: 32px;
+}
+
+.p-admin-title h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.p-admin-title p {
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ── Filters ── */
+.p-admin-filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.p-search-box {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+}
+
+.p-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.p-search-box input {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.p-search-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.p-role-filter-select {
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  background-color: white;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+}
+
+/* ── Table ── */
+.p-admin-table-wrapper {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.p-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.p-admin-table th {
+  padding: 16px 24px;
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.p-admin-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.p-text-right { text-align: right; }
+
+/* ── User Cells ── */
+.p-user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.p-user-avatar-mini {
+  width: 36px;
+  height: 36px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.p-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-user-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.p-user-email {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ── Status ── */
+.p-status-indicator {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.p-status-indicator.active { background-color: #dcfce7; color: #166534; }
+.p-status-indicator.suspended { background-color: #fee2e2; color: #991b1b; }
+
+/* ── Actions ── */
+.p-role-quick-change {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  background-color: #f8fafc;
+}
+
+.p-role-quick-change:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* ── Modal ── */
+.p-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.p-confirm-modal {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.p-confirm-modal h3 {
+  margin: 0 0 16px;
+  color: #111827;
+  font-size: 1.25rem;
+}
+
+.p-modal-role-highlight {
+  color: #2563eb;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.p-modal-warning {
+  margin: 20px 0;
+  padding: 12px;
+  background-color: #fff7ed;
+  border-left: 4px solid #f97316;
+  color: #9a3412;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.p-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.p-modal-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.p-btn-cancel {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: none;
+}
+
+.p-btn-confirm {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+}
+
+.p-btn-confirm:hover {
+  background-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .p-admin-filters { flex-direction: column; }
+  .p-search-box { max-width: 100%; }
+  .p-admin-table-wrapper { overflow-x: auto; }
+}

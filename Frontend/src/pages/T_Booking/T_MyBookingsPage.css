@@ -1,0 +1,171 @@
+.t-my-bookings-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111827;
+}
+
+.t-mbp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 20px;
+}
+
+.t-mbp-title-area h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #1f2937;
+}
+
+.t-mbp-title-area p {
+  color: #4b5563;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.t-mbp-btn-new {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+  white-space: nowrap;
+}
+
+.t-mbp-btn-new:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+}
+
+.t-mbp-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.t-mbp-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 24px;
+}
+
+.t-mbp-main {
+  flex: 1;
+  min-width: 0; /* important for preventing tables blowing out of flexbox limits */
+}
+
+.t-mbp-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.t-mbp-view-toggles {
+  display: flex;
+  background-color: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.t-toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  color: #6b7280;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.t-toggle-btn:hover {
+  color: #111827;
+}
+
+.t-toggle-btn.active {
+  background-color: white;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.t-mbp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  max-height: 550px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.t-mbp-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.t-mbp-grid::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+.t-mbp-grid::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+.t-mbp-grid::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.t-mbp-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+}
+
+.t-mbp-empty h3 {
+  margin: 0 0 8px 0;
+  color: #374151;
+}
+
+.t-mbp-empty p {
+  color: #6b7280;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .t-mbp-layout {
+    flex-direction: column;
+  }
+  
+  .t-mbp-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .t-mbp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .t-mbp-btn-new {
+    width: 100%;
+  }
+}

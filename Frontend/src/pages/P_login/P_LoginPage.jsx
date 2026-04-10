@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/P_AuthContext';
 import P_GoogleLoginButton from '../../components/P_auth_notify/P_GoogleLoginButton';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import './P_LoginPage.css';
 
 /**
@@ -86,7 +87,10 @@ const P_LoginPage = () => {
           </div>
           
           <div className="p-login-field">
-            <label htmlFor="password">Password</label>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+              <label htmlFor="password" style={{ marginBottom: 0 }}>Password</label>
+              <Link to="/forgot-password" style={{ fontSize: '0.85rem', color: '#1a73e8', textDecoration: 'none' }}>Forgot Password?</Link>
+            </div>
             <div className="password-input-wrapper">
               <input 
                 type={showPassword ? "text" : "password"} 
@@ -102,7 +106,7 @@ const P_LoginPage = () => {
                 tabIndex="-1"
                 aria-label={showPassword ? "Hide password" : "Show password"}
               >
-                {showPassword ? '🙈' : '👁️'}
+                {showPassword ? <FiEyeOff /> : <FiEye />}
               </button>
             </div>
           </div>

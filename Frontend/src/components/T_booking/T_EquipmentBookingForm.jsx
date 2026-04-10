@@ -18,6 +18,16 @@ const T_EquipmentBookingForm = ({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === 'quantity' && selectedResource?.quantity) {
+      const max = parseInt(selectedResource.quantity);
+      const requested = parseInt(value);
+      // Hard-clamp: do not allow value to exceed available stock
+      const clamped = !isNaN(requested) && requested > max ? String(max) : value;
+      setFormData(prev => ({ ...prev, [name]: clamped }));
+      return;
+    }
+
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -143,14 +153,14 @@ const T_EquipmentBookingForm = ({
               value={formData.quantity || ''}
               onChange={handleChange}
               min="1"
+              max={selectedResource?.quantity || undefined}
               placeholder="Amount of equipment"
               className={`t-input ${errors.quantity ? 't-input-error' : ''}`}
             />
             {errors.quantity && <span className="t-error-msg">{errors.quantity}</span>}
-            
-            {selectedResource?.quantity && parseInt(formData.quantity) > parseInt(selectedResource.quantity) && (
-              <span className="t-warning-msg">
-                ⚠️ Careful: Requested quantity exceeds the known stock ({selectedResource.quantity}).
+            {selectedResource?.quantity && (
+              <span className="t-info-msg" style={{fontSize: '0.82rem', color: '#6b7280', marginTop: '0.25rem', display: 'block'}}>
+                Available stock: <strong>{selectedResource.quantity}</strong> units maximum
               </span>
             )}
           </div>

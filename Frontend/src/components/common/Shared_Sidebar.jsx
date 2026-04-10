@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/P_AuthContext';
+import { 
+  FiBarChart2, 
+  FiUsers, 
+  FiUserPlus, 
+  FiTool, 
+  FiBell, 
+  FiBox, 
+  FiClipboard, 
+  FiTrendingUp,
+  FiHome,
+  FiTag,
+  FiCalendar,
+  FiMonitor,
+  FiMap,
+  FiUser
+} from 'react-icons/fi';
 import './Shared_Sidebar.css';
 
 /**
@@ -30,20 +46,20 @@ const Shared_Sidebar = () => {
       title: 'Admin: Global Overview',
       roles: ['admin'],
       items: [
-        { label: 'Dashboard', path: '/dashboard', icon: '📊' },
-        { label: 'Student List', path: '/admin/users', icon: '👥' },
-        { label: 'Lectures List', path: '/admin/users?filter=lecturer', icon: '👨‍🏫' },
-        { label: 'Staff List', path: '/admin/users?filter=staff', icon: '👷' },
-        { label: 'Broadcast Alerts', path: '/admin/notifications', icon: '🔔' }
+        { label: 'Dashboard', path: '/dashboard', icon: <FiBarChart2 /> },
+        { label: 'Student List', path: '/admin/users', icon: <FiUsers /> },
+        { label: 'Lectures List', path: '/admin/users?filter=lecturer', icon: <FiUserPlus /> },
+        { label: 'Staff List', path: '/admin/users?filter=staff', icon: <FiTool /> },
+        { label: 'Broadcast Alerts', path: '/admin/notifications', icon: <FiBell /> }
       ]
     },
     {
       title: 'Admin: Resource Control',
       roles: ['admin'],
       items: [
-        { label: 'Manage Facilities', path: '/admin/facilities', icon: '🏢' },
-        { label: 'Booking Oversight Manage', path: '/admin/bookings', icon: '📋' },
-        { label: 'Ticket Analytics', path: '/admin/tickets', icon: '📈' }
+        { label: 'Manage Facilities', path: '/admin/facilities', icon: <FiBox /> },
+        { label: 'Booking Oversight Manage', path: '/admin/bookings', icon: <FiClipboard /> },
+        { label: 'Ticket Analytics', path: '/admin/tickets', icon: <FiTrendingUp /> }
       ]
     },
 
@@ -52,12 +68,11 @@ const Shared_Sidebar = () => {
       title: 'Lecturer Services',
       roles: ['lecturer'],
       items: [
-        { label: 'Dashboard', path: '/dashboard', icon: '📊' },
-        { label: 'My Bookings', path: '/bookings/my', icon: '📅' },
-        { label: 'Facility Booking', path: '/bookings/new', icon: '🏫' },
-        { label: 'Equipment Booking', path: '/bookings/equipment', icon: '🖥️' },
-        { label: 'Calendar Schedule', path: '/bookings/calendar', icon: '📆' },
-        { label: 'My Tickets Track', path: '/tickets/my', icon: '🎫' }
+        { label: 'Dashboard', path: '/dashboard', icon: <FiBarChart2 /> },
+        { label: 'My Bookings', path: '/bookings/my', icon: <FiCalendar /> },
+        { label: 'Facility Booking', path: '/bookings/new', icon: <FiMap /> },
+        { label: 'Equipment Booking', path: '/bookings/equipment', icon: <FiMonitor /> },
+        { label: 'My Tickets Track', path: '/tickets/my', icon: <FiTag /> }
       ]
     },
 
@@ -66,8 +81,8 @@ const Shared_Sidebar = () => {
       title: 'Staff Operations Engine',
       roles: ['staff_member', 'staff'],
       items: [
-        { label: 'Dashboard', path: '/dashboard', icon: '📊' },
-        { label: 'Maintenance Queue', path: '/tickets/queue', icon: '👷' }
+        { label: 'Dashboard', path: '/dashboard', icon: <FiBarChart2 /> },
+        { label: 'Maintenance Queue', path: '/tickets/queue', icon: <FiTool /> }
       ]
     },
 
@@ -76,8 +91,8 @@ const Shared_Sidebar = () => {
       title: 'Student Portal',
       roles: ['student'],
       items: [
-        { label: 'Dashboard', path: '/dashboard', icon: '🏠' },
-        { label: 'My Tickets Track', path: '/tickets/my', icon: '🎫' }
+        { label: 'Dashboard', path: '/dashboard', icon: <FiHome /> },
+        { label: 'My Tickets Track', path: '/tickets/my', icon: <FiTag /> }
       ]
     },
 
@@ -86,8 +101,8 @@ const Shared_Sidebar = () => {
       title: 'My Settings',
       roles: ['admin', 'lecturer', 'student', 'staff_member', 'staff'],
       items: [
-        { label: 'My Profile', path: '/profile', icon: '👤' },
-        { label: 'App Settings', path: '/settings', icon: '⚙️' }
+        { label: 'My Profile', path: '/profile', icon: <FiUser /> },
+        
       ]
     }
   ];

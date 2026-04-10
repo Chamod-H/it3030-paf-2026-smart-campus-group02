@@ -1,0 +1,33 @@
+.p-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+.p-role-badge:hover {
+  transform: scale(1.05);
+}
+
+/* ── Sizes ── */
+.p-rb-sm { font-size: 0.62rem; padding: 1px 10px; border: 1px solid rgba(0,0,0,0.03); }
+.p-rb-md { font-size: 0.7rem; padding: 3px 12px; border: 1px solid rgba(0,0,0,0.05); }
+.p-rb-lg { font-size: 0.8rem; padding: 5px 16px; border: 1px solid rgba(0,0,0,0.08); }
+
+.p-rb-icon { font-size: 1.1em; line-height: 1; }
+.p-rb-label { line-height: 1; }
+
+/* ── Role Colours (Premium Palette) ── */
+.p-rb-admin      { background-color: #fee2e2; color: #991b1b; border-color: rgba(153, 27, 27, 0.1); }
+.p-rb-user       { background-color: #e0f2fe; color: #075985; border-color: rgba(7, 89, 133, 0.1); }
+.p-rb-technician { background-color: #fef3c7; color: #92400e; border-color: rgba(146, 64, 14, 0.1); }
+.p-rb-manager    { background-color: #f5f3ff; color: #5b21b6; border-color: rgba(91, 33, 182, 0.1); }
+.p-rb-unknown    { background-color: #f3f4f6; color: #374151; border-color: rgba(55, 65, 81, 0.1); }
+

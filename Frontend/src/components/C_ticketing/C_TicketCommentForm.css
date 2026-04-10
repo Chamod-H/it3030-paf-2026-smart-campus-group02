@@ -1,0 +1,105 @@
+.c-ticket-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.c-tcf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-tcf-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.c-tcf-hint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.c-tcf-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #111827;
+  resize: vertical;
+  background-color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.c-tcf-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.c-tcf-textarea.c-tcf-error-input {
+  border-color: #ef4444;
+}
+
+.c-tcf-textarea.c-tcf-error-input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.c-tcf-error-text {
+  font-size: 0.85rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.c-tcf-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.c-tcf-btn-cancel {
+  padding: 9px 20px;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  font-weight: 600;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+.c-tcf-btn-cancel:hover {
+  background-color: #f3f4f6;
+}
+
+.c-tcf-btn-submit {
+  padding: 9px 20px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.c-tcf-btn-submit:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.c-tcf-btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

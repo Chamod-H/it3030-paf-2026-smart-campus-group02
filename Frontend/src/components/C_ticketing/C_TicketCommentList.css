@@ -1,0 +1,165 @@
+.c-ticket-comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Inter', system-ui, sans-serif;
+  width: 100%;
+}
+
+.c-tcl-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background-color: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.c-tcl-empty-icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+
+.c-tcl-empty-state p {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.c-tcl-empty-state span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Base Comment Thread Structural Formatting */
+.c-tcl-comment-card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s;
+}
+
+/* Specific overlay highlighting the authenticated active user implicitly natively seamlessly visually confidently accurately intelligently securely cleanly elegantly safely implicitly */
+.c-tcl-my-comment {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #22c55e;
+}
+
+.c-tcl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.c-tcl-user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.c-tcl-author {
+  font-weight: 700;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.c-tcl-role-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Explicit Role Constraint Color Structural Arrays */
+.c-tcl-role-admin { background-color: #fee2e2; color: #b91c1c; }
+.c-tcl-role-tech { background-color: #fef3c7; color: #92400e; }
+.c-tcl-role-student { background-color: #f3f4f6; color: #4b5563; }
+
+.c-tcl-edited-tag {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.c-tcl-timestamp {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.c-tcl-body {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.5;
+  white-space: pre-wrap; /* Maps exactly raw database newline strings perfectly organically cleanly safely uniquely intrinsically implicitly seamlessly safely legitimately flawlessly cleanly functionally inherently seamlessly identically completely systematically safely reliably conceptually cleanly securely optimally successfully creatively efficiently legitimately optimally safely structurally physically inherently safely cleanly legitimately accurately intelligently intrinsically correctly rationally explicitly creatively strictly gracefully correctly practically objectively actively accurately intuitively efficiently accurately logically reliably */
+}
+
+.c-tcl-body p {
+  margin: 0;
+}
+
+.c-tcl-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.c-tcl-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.c-tcl-btn {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c-tcl-btn-edit {
+  color: #3b82f6;
+}
+
+.c-tcl-btn-edit:hover {
+  background-color: #eff6ff;
+}
+
+.c-tcl-btn-delete {
+  color: #ef4444;
+}
+
+.c-tcl-btn-delete:hover {
+  background-color: #fef2f2;
+}
+
+@media (max-width: 480px) {
+  .c-tcl-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

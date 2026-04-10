@@ -1,0 +1,127 @@
+.c-ticket-form-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  padding: 32px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111827;
+}
+
+.c-ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Dense form architecture grids */
+.c-tf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .c-tf-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.c-tf-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.c-tf-full-width {
+  grid-column: 1 / -1;
+}
+
+.c-tf-field-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.c-tf-required {
+  color: #ef4444;
+}
+
+.c-tf-field-group input,
+.c-tf-field-group select,
+.c-tf-field-group textarea {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #111827;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: white;
+}
+
+.c-tf-field-group input:focus,
+.c-tf-field-group select:focus,
+.c-tf-field-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.c-tf-field-group input.c-tf-error-input,
+.c-tf-field-group select.c-tf-error-input,
+.c-tf-field-group textarea.c-tf-error-input {
+  border-color: #ef4444;
+}
+
+.c-tf-field-group input.c-tf-error-input:focus,
+.c-tf-field-group select.c-tf-error-input:focus,
+.c-tf-field-group textarea.c-tf-error-input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.c-tf-error-text {
+  font-size: 0.85rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* Actions logic */
+.c-tf-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.c-tf-btn-cancel {
+  padding: 12px 24px;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.c-tf-btn-cancel:hover {
+  background-color: #f9fafb;
+}
+
+.c-tf-btn-submit {
+  padding: 12px 24px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.c-tf-btn-submit:hover {
+  background-color: #2563eb;
+}

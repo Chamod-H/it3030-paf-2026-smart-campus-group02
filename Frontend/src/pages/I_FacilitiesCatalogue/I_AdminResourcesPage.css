@@ -1,0 +1,239 @@
+.admin-resources-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #111827;
+}
+
+.adm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.adm-header-left h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #111827;
+}
+
+.adm-header-left p {
+  font-size: 1.05rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.adm-btn-add {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.adm-btn-add:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.adm-icon-add {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.adm-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.adm-search-box {
+  flex: 1;
+  max-width: 400px;
+}
+
+/* Specific UI override for the search nested inside this page */
+.adm-search-box .resource-search-container {
+  margin-bottom: 0;
+}
+
+.adm-quick-stats {
+  display: flex;
+  gap: 12px;
+}
+
+.adm-stat-pill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #f9fafb;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid #e5e7eb;
+}
+
+.adm-stat-active {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.adm-table-wrapper {
+  background-color: white;
+  border-radius: 12px;
+  transition: opacity 0.3s;
+}
+
+.adm-processing {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.adm-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #6b7280;
+}
+
+.adm-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: adm-spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes adm-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Modal Overlay */
+.adm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm-modal {
+  background-color: white;
+  border-radius: 16px;
+  padding: 32px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: adm-zoom-in 0.2s ease-out;
+  text-align: center;
+}
+
+@keyframes adm-zoom-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.adm-modal-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.adm-modal h3 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.adm-modal p {
+  color: #4b5563;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.adm-modal-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.adm-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  min-width: 120px;
+}
+
+.adm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.adm-btn-cancel {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.adm-btn-cancel:not(:disabled):hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.adm-btn-danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+.adm-btn-danger:not(:disabled):hover {
+  background-color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .adm-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .adm-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .adm-search-box {
+    max-width: none;
+  }
+}

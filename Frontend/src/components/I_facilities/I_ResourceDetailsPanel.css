@@ -1,0 +1,285 @@
+.resource-details-panel {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+  padding: 32px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin-bottom: 32px;
+}
+
+.rdp-header-actions {
+  margin-bottom: 24px;
+}
+
+.rdp-btn-back {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px 8px 0;
+  transition: color 0.2s;
+}
+
+.rdp-btn-back:hover {
+  color: #111827;
+}
+
+.rdp-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Gallery Section */
+.rdp-gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rdp-main-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.rdp-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.rdp-status-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: white;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.rdp-status-active {
+  background-color: rgba(16, 185, 129, 0.9);
+}
+
+.rdp-status-inactive {
+  background-color: rgba(239, 68, 68, 0.9);
+}
+
+.rdp-thumbnails {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.rdp-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.rdp-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rdp-thumbnail-active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Info Section */
+.rdp-info-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.rdp-type {
+  display: inline-block;
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.rdp-name {
+  margin: 0 0 16px 0;
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rdp-location-capacity {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rdp-meta-item {
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.rdp-description, .rdp-purposes, .rdp-availability {
+  margin-bottom: 24px;
+}
+
+.rdp-info-section h3 {
+  font-size: 1.1rem;
+  color: #111827;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.rdp-description p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.rdp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rdp-tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.rdp-windows-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rdp-window-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.rdp-window-day {
+  font-weight: 600;
+  color: #374151;
+}
+
+.rdp-window-time {
+  color: #6b7280;
+}
+
+.rdp-no-av {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Actions */
+.rdp-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.rdp-btn {
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rdp-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rdp-btn-book {
+  flex: 2;
+  background-color: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.rdp-btn-book:not(:disabled):hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.rdp-btn-edit {
+  flex: 1;
+  background-color: white;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.rdp-btn-edit:hover {
+  background-color: #f9fafb;
+  color: #111827;
+  border-color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .rdp-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-details-panel {
+    padding: 20px;
+  }
+  
+  .rdp-actions {
+    flex-direction: column;
+  }
+}

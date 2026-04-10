@@ -1,0 +1,106 @@
+.p-unauthorized-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  padding: 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.p-ua-card {
+  max-width: 500px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  padding: 48px 32px;
+  text-align: center;
+  animation: uaFadeIn 0.5s ease-out;
+}
+
+@keyframes uaFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Icon ── */
+.p-ua-icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #fef2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.p-ua-emoji {
+  font-size: 2.5rem;
+}
+
+/* ── Typography ── */
+.p-ua-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+.p-ua-message {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 32px;
+}
+
+/* ── Actions ── */
+.p-ua-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.p-ua-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.p-ua-btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+}
+.p-ua-btn-primary:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.p-ua-btn-outline {
+  background-color: white;
+  color: #374151;
+  border: 1.5px solid #e5e7eb;
+}
+.p-ua-btn-outline:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* ── Footer ── */
+.p-ua-footer {
+  padding-top: 24px;
+  border-top: 1px solid #f3f4f6;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.p-ua-footer strong {
+  color: #475569;
+}

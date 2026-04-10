@@ -1,0 +1,93 @@
+.shared-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Animation Core ── */
+.shared-spinner {
+  position: relative;
+  display: inline-block;
+}
+
+.shared-spinner-ring {
+  box-sizing: border-box;
+  display: block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #3b82f6 transparent transparent transparent; /* Primary Blue */
+  animation: shared-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes shared-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── Size Variants ── */
+.size-small .shared-spinner {
+  width: 20px;
+  height: 20px;
+}
+.size-small .shared-spinner-ring {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+.size-small .shared-loading-text {
+  font-size: 0.75rem;
+  margin-top: 6px;
+}
+
+.size-medium .shared-spinner {
+  width: 36px;
+  height: 36px;
+}
+.size-medium .shared-spinner-ring {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+.size-medium .shared-loading-text {
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+.size-large .shared-spinner {
+  width: 60px;
+  height: 60px;
+}
+.size-large .shared-spinner-ring {
+  width: 60px;
+  height: 60px;
+  border-width: 4px;
+}
+.size-large .shared-loading-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+/* ── Text Styles ── */
+.shared-loading-text {
+  color: #64748b;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* ── Fullscreen Overlay ── */
+.shared-loading-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.85); /* Frosty backdrop */
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it floats above absolutely everything */
+}

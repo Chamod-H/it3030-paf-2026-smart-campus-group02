@@ -44,7 +44,7 @@ const LecturerDashboard = ({ user, unreadCount, summaries }) => {
                 <span>Reserve a lab or lecture hall</span>
               </div>
             </button>
-            <button className="action-btn" onClick={() => navigate('/facilities')}>
+            <button className="action-btn" onClick={() => navigate('/facilities/all')}>
               <span className="action-icon"><FiMap /></span>
               <div className="action-text">
                 <strong>Browse Catalogue</strong>
